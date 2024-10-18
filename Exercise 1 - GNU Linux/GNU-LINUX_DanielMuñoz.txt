@@ -1,0 +1,63 @@
+Entrega un archivo .txt con los comandos que has utilizados para realizar lo siguiente:
+
+    1. Muestra la información del sistema: CPU, discos y particiones y versión del sistema
+lscpu
+df -h
+uname -a
+
+    2. Crea un directorio dentro de nuestra home llamado "test"
+mkdir ~/test
+
+    3. Muestra la ruta completa del directorio en el que estamos actualmente
+pwd
+
+    4. Entra en ese directorio utilizando la ruta relativa
+cd test
+
+    5. Crea un archivo llamado test.txt dentro de este directorio
+touch test.txt
+
+    6. Crea un archivo oculto llamado .test_hide.txt dentro de este directorio
+touch .test_hide.txt
+
+    7. Lista el contenido de ese directorio mostrando también las propiedades del directorio y los archivos ocultos
+ls -la
+
+    8. Escribe un texto dentro del fichero test.txt
+echo "Escribo un texto de prueba dentro del fichero de texto" > test.txt
+
+    9. Añade después de esa frase otra sin borrar la original y sin utilizar un editor de texto
+echo "Añado otra frase después de la anterior" >> test.txt"
+
+    10. Borra el fichero .test_hide.txt
+rm .test_hide.txt
+
+    11. Sobrescribe el contenido del archivo test.txt con el contenido de un script bash que simplemente espera 5 minutos y luego imprime "SUCESS"
+sleep 300 && echo 'SUCESS' > test.txt
+
+    12. Cambia la extensión del archivo test.txt por test.sh
+mv test.txt test.sh
+
+    13. Cambia los permisos para test.sh para que sean rwxr-xr--
+chmod 754 test.sh
+
+    14. Ejecuta test.sh en segundo plano (usando "nohup" y "&")
+nohup ./test.sh &
+
+    15. Lista todos los procesos del sistema que contengan la palabra "test" (usando "ps -ef" y "grep")
+ps -ef | grep test
+
+    16. Mata el proceso que hemos lanzado usando su PID
+pkill -f test.sh
+
+    17. Comprueba si realmente lo hemos matado
+ps -ef | grep test.sh
+
+    18. Lánzalo de nuevo en otra terminal, pero esta vez en primer plano
+./test.sh
+
+    19. Mata todos los procesos del sistema que contengan la palabra "test"
+pkill -f test
+
+    20. Comprueba de nuevo si lo hemos matado correctamente
+ps -ef | grep test
